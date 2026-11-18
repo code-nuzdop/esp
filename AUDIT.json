@@ -7,20 +7,27 @@
   "cfg_json": "evidence/SjTNlCHNfW_control_flow_graphs.json",
   "cfg_top_level_entries": 650,
   "original_archive_sha256": "85c91286964b494c6382aced1d446c48ca594724d202478ea9fe87bd3a1bd8d4",
-  "archive_manifest_entries": 66,
+  "archive_manifest_entries": 65,
   "archive_integrity_verified": true,
-  "normalized_files": [
-    "pe_headers.txt",
-    "opcode_00_actual.cs.txt",
-    "imports.txt",
-    "helper_64bit.cs.txt",
-    "opcode_00.il.txt",
-    "opcode_01_helper.cs.txt",
+  "archive_internal_manifest_complete": true,
+  "archive_internal_manifest_uncovered": [
+    "MANIFEST_SHA256.txt"
+  ],
+  "root_duplicate_exports_removed": [
     "helper_32bit.cs.txt",
-    "opcode_02.il.txt",
+    "helper_64bit.cs.txt",
+    "imports.txt",
+    "opcode_00.il.txt",
+    "opcode_00_actual.cs.txt",
     "opcode_01.il.txt",
-    "vm_class.il.txt",
+    "opcode_01_helper.cs.txt",
+    "opcode_02.il.txt",
     "opcode_02_helper.cs.txt",
+    "opcode_registration.il.txt",
+    "pe_headers.txt",
+    "vm_class.il.txt",
     "vm_constructor_full.il.txt"
-  ]
+  ],
+  "module_mvid": "25c98968-dcee-4c45-889d-f1773ecb3789",
+  "normalized_files": []
 }
