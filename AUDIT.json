@@ -1,0 +1,26 @@
+{
+  "scope": "Loader + protector static analysis; runtime generation and cheat payload unverified",
+  "sample_sha256": "119883c62a2e832f0e9058e0d88e391f15820674cdd33d79845c73c58d63ea40",
+  "sample_size": 6783488,
+  "method_inventory_rows": 888,
+  "full_il_disassembly": "evidence/SjTNlCHNfW_disassembly.il.txt",
+  "cfg_json": "evidence/SjTNlCHNfW_control_flow_graphs.json",
+  "cfg_top_level_entries": 650,
+  "original_archive_sha256": "85c91286964b494c6382aced1d446c48ca594724d202478ea9fe87bd3a1bd8d4",
+  "archive_manifest_entries": 66,
+  "archive_integrity_verified": true,
+  "normalized_files": [
+    "pe_headers.txt",
+    "opcode_00_actual.cs.txt",
+    "imports.txt",
+    "helper_64bit.cs.txt",
+    "opcode_00.il.txt",
+    "opcode_01_helper.cs.txt",
+    "helper_32bit.cs.txt",
+    "opcode_02.il.txt",
+    "opcode_01.il.txt",
+    "vm_class.il.txt",
+    "opcode_02_helper.cs.txt",
+    "vm_constructor_full.il.txt"
+  ]
+}

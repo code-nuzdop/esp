@@ -1,0 +1,72 @@
+method_id,method_token,type,name,classification,clean_instructions,dropped_dead_assignments,il
+15,0x0600000F,022C8832,2683EF81,field getter + unsigned 16-bit conversion,4,1,ldarg.0 ; ldfld 0x400000d; conv.u2 ; ret 
+17,0x06000011,022C8832,9F0A88B4,field getter,3,1,ldarg.0 ; ldfld 0x400000d; ret 
+19,0x06000013,022C8832,BE8EDF2B,field getter,3,1,ldarg.0 ; ldfld 0x400000d; ret 
+20,0x06000014,022C8832,DDAEE803,type token -> external helper -> return,3,0,ldtoken 0x10000ba; call 0xa000039; ret 
+24,0x06000018,022C8832,AE814AAA,field getter + signed byte conversion,4,0,ldarg.0 ; ldfld 0x400000d; conv.i1 ; ret 
+45,0x0600002D,5D8D6E97,9F0A88B4,field getter,3,1,ldarg.0 ; ldfld 0x4000038; ret 
+49,0x06000031,5D8D6E97,DDAEE803,type token -> external helper -> return,3,1,ldtoken 0x100005a; call 0xa000039; ret 
+51,0x06000033,5D8D6E97,2683EF81,field getter,3,1,ldarg.0 ; ldfld 0x4000038; ret 
+53,0x06000035,5D8D6E97,F187C6B4,field getter,3,1,ldarg.0 ; ldfld 0x4000038; ret 
+67,0x06000043,50B2440C,F187C6B4,field -> external helper -> return,4,1,ldarg.0 ; ldfld 0x400003a; call 0xa0001b3; ret 
+70,0x06000046,50B2440C,DDAEE803,type token -> external helper -> return,3,1,ldtoken 0x10000c0; call 0xa000039; ret 
+72,0x06000048,50B2440C,958D7532,field -> external helper -> return,4,1,ldarg.0 ; ldfld 0x400003a; call 0xa00016a; ret 
+78,0x0600004E,FD8B312A,95B0748C,field null initializer,4,0,ldarg.0 ; ldnull ; stfld 0x4000049; ret 
+98,0x06000062,E29CB52C,DDAEE803,type token -> external helper -> return,3,0,ldtoken 0x1000091; call 0xa000039; ret 
+178,0x060000B2,E4113232,DDAEE803,type token -> external helper -> return,3,0,ldtoken 0x1000057; call 0xa000039; ret 
+180,0x060000B4,BDAFD2B1,2683EF81,field getter,3,0,ldarg.0 ; ldfld 0x400007e; ret 
+188,0x060000BC,BDAFD2B1,F187C6B4,field getter,3,0,ldarg.0 ; ldfld 0x400007e; ret 
+201,0x060000C9,A8940832,.ctor,single-argument call wrapper,3,1,ldarg.0 ; call 0xa00003f; ret 
+207,0x060000CF,C08BBCAB,798B5EB6,field getter,3,0,ldarg.0 ; ldfld 0x4000083; ret 
+223,0x060000DF,A3B21017,841E011C,field getter,3,1,ldarg.0 ; ldfld 0x4000093; ret 
+225,0x060000E1,F49AF186,21BA5F2E,field getter,3,1,ldarg.0 ; ldfld 0x4000098; ret 
+226,0x060000E2,F49AF186,3C087C01,field getter,3,1,ldarg.0 ; ldfld 0x400009a; ret 
+237,0x060000ED,A5A0BDA6,798B5EB6,field getter,3,0,ldarg.0 ; ldfld 0x40000c4; ret 
+238,0x060000EE,A5A0BDA6,DDAEE803,field getter,3,1,ldarg.0 ; ldfld 0x40000c3; ret 
+245,0x060000F5,43233FA0,AE814AAA,field getter + signed byte conversion,4,1,ldarg.0 ; ldfld 0x40000c7; conv.i1 ; ret 
+251,0x060000FB,43233FA0,230B3CA3,field -> external helper -> return,4,0,ldarg.0 ; ldfld 0x40000c7; call 0xa0001a8; ret 
+261,0x06000105,43233FA0,C081219E,field getter,3,0,ldarg.0 ; ldfld 0x40000c7; ret 
+324,0x06000144,BFB7EF98,DDAEE803,type token -> external helper -> return,3,1,ldtoken 0x1000063; call 0xa000039; ret 
+341,0x06000155,8F0BF53C,9E2B0B8E,field setter,4,1,ldarg.0 ; ldarg.1 ; stfld 0x4000130; ret 
+343,0x06000157,8F0BF53C,AF840B8D,field getter,3,1,ldarg.0 ; ldfld 0x4000130; ret 
+363,0x0600016B,6F8B8C2A,2683EF81,field getter + unsigned 16-bit conversion,4,1,ldarg.0 ; ldfld 0x4000132; conv.u2 ; ret 
+365,0x0600016D,6F8B8C2A,61085517,field getter,3,1,ldarg.0 ; ldfld 0x4000132; ret 
+366,0x0600016E,6F8B8C2A,AE814AAA,field getter + signed byte conversion,4,0,ldarg.0 ; ldfld 0x4000132; conv.i1 ; ret 
+367,0x0600016F,6F8B8C2A,D20CC905,field getter,3,1,ldarg.0 ; ldfld 0x4000132; ret 
+376,0x06000178,6F8B8C2A,DDAEE803,type token -> external helper -> return,3,0,ldtoken 0x10000bc; call 0xa000039; ret 
+432,0x060001B0,93BA6F05,D20CC905,field getter,3,0,ldarg.0 ; ldfld 0x4000148; ret 
+442,0x060001BA,93BA6F05,2683EF81,field getter + unsigned 16-bit conversion,4,1,ldarg.0 ; ldfld 0x4000148; conv.u2 ; ret 
+445,0x060001BD,93BA6F05,DDAEE803,type token -> external helper -> return,3,0,ldtoken 0x10000bb; call 0xa000039; ret 
+457,0x060001C9,93BA6F05,61085517,field getter,3,1,ldarg.0 ; ldfld 0x4000148; ret 
+458,0x060001CA,93BA6F05,958D7532,field getter + unsigned byte conversion,4,1,ldarg.0 ; ldfld 0x4000148; conv.u1 ; ret 
+506,0x060001FA,F6AFCDA3,DDAEE803,type token -> external helper -> return,3,0,ldtoken 0x100001c; call 0xa000039; ret 
+508,0x060001FC,F6AFCDA3,798B5EB6,field getter,3,0,ldarg.0 ; ldfld 0x4000173; ret 
+533,0x06000215,3118A418,DDAEE803,type token -> external helper -> return,3,0,ldtoken 0x1000097; call 0xa000039; ret 
+535,0x06000217,3118A418,8F21799C,field getter,3,1,ldarg.0 ; ldfld 0x4000178; ret 
+548,0x06000224,04826485,BE8EDF2B,field getter,3,1,ldarg.0 ; ldfld 0x4000179; ret 
+549,0x06000225,04826485,2683EF81,field getter + unsigned 16-bit conversion,4,0,ldarg.0 ; ldfld 0x4000179; conv.u2 ; ret 
+550,0x06000226,04826485,AE814AAA,field getter,3,1,ldarg.0 ; ldfld 0x4000179; ret 
+554,0x0600022A,04826485,DDAEE803,type token -> external helper -> return,3,1,ldtoken 0x100005b; call 0xa000039; ret 
+555,0x0600022B,04826485,958D7532,field getter + unsigned byte conversion,4,1,ldarg.0 ; ldfld 0x4000179; conv.u1 ; ret 
+558,0x0600022E,04826485,9F0A88B4,field getter,3,0,ldarg.0 ; ldfld 0x4000179; ret 
+610,0x06000262,B5BF2612,9F0A88B4,field getter,3,0,ldarg.0 ; ldfld 0x4000189; ret 
+613,0x06000265,22864383,AD3AA131,field getter,3,1,ldarg.0 ; ldfld 0x400018c; ret 
+615,0x06000267,22864383,891D4187,field getter,3,0,ldarg.0 ; ldfld 0x400018b; ret 
+616,0x06000268,22864383,0C17F91A,field getter,3,1,ldarg.0 ; ldfld 0x400018a; ret 
+620,0x0600026C,EC0E7286,DDAEE803,type token -> external helper -> return,3,0,ldtoken 0x1000046; call 0xa000039; ret 
+621,0x0600026D,EC0E7286,2683EF81,field getter,3,1,ldarg.0 ; ldfld 0x400018d; ret 
+622,0x0600026E,EC0E7286,F187C6B4,field getter,3,1,ldarg.0 ; ldfld 0x400018d; ret 
+623,0x0600026F,EC0E7286,BE8EDF2B,field getter,3,0,ldarg.0 ; ldfld 0x400018d; ret 
+624,0x06000270,EC0E7286,9F0A88B4,field getter,3,1,ldarg.0 ; ldfld 0x400018d; ret 
+626,0x06000272,EC0E7286,958D7532,field getter,3,0,ldarg.0 ; ldfld 0x400018d; ret 
+628,0x06000274,EC0E7286,AE814AAA,field getter + signed byte conversion,4,1,ldarg.0 ; ldfld 0x400018d; conv.i1 ; ret 
+768,0x06000300,E0234509,AE814AAA,field getter + signed byte conversion,4,1,ldarg.0 ; ldfld 0x40001b9; conv.i1 ; ret 
+787,0x06000313,E0234509,958D7532,field getter + unsigned byte conversion,4,1,ldarg.0 ; ldfld 0x40001b9; conv.u1 ; ret 
+791,0x06000317,E0234509,DAB8483B,field getter + unsigned 16-bit conversion,4,1,ldarg.0 ; ldfld 0x40001b9; conv.u2 ; ret 
+801,0x06000321,7E33331F,20BE0700,field getter,3,0,ldarg.0 ; ldfld 0x40001bc; ret 
+803,0x06000323,7E33331F,.ctor,single-argument call wrapper,3,1,ldarg.0 ; call 0xa00003f; ret 
+808,0x06000328,B70C980B,DDAEE803,type token -> external helper -> return,3,1,ldtoken 0x1000059; call 0xa000039; ret 
+856,0x06000358,7FB60882,.ctor,single-argument call wrapper,3,0,ldarg.0 ; call 0xa00003f; ret 
+858,0x0600035A,ABA5F297,F187C6B4,field getter,3,1,ldarg.0 ; ldfld 0x4000225; ret 
+866,0x06000362,ABA5F297,DDAEE803,type token -> external helper -> return,3,1,ldtoken 0x1000057; call 0xa000039; ret 
+884,0x06000374,ABA5F297,DAB8483B,field getter + unsigned 16-bit conversion,4,1,ldarg.0 ; ldfld 0x4000225; conv.u2 ; ret 

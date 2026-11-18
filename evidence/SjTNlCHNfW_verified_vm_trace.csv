@@ -1,0 +1,31 @@
+stream,step,cursor_before_rva,kind,decoded_value,handler,cursor_after_rva,interpretation
+outer,1,0x007FA6E1,opcode,0x10,B40B1435(),0x007FA6E0,push 32-bit integer from following encoded operand
+outer,2,0x007FA6E0,uint32 operand,0x0,,0x007FA6DC,0x10 pushes this value
+outer,3,0x007FA6DC,opcode,0x50,'8C26AAA4'(),0x007FA6DB,0x50 pops top VM stack value
+outer,4,0x007FA6DB,opcode,0x50,'8C26AAA4'(),0x007FA6DA,0x50 pops another VM stack value; initial dispatcher seeded an argument wrapper
+outer,5,0x007FA6DA,opcode,0x10,B40B1435(),0x007FA6D9,0x10 pushes the following encoded uint32
+outer,6,0x007FA6D9,uint32 operand,0x80054A,,0x007FA6D5,address or selector subsequently consumed by 0x53
+outer,7,0x007FA6D5,opcode,0x53,'918908BF'(),0x007FA6D4,0x53 invokes another VM interpreter with encoded operands
+nested,1,0x0080054A,uint16 header,0x0,,0x00800548,zero argument count in 0x53 nested call
+nested,2,0x00800548,uint32 header,0x0,,0x00800544,zero return-type identifier/marker; precise role depends on 0x53 branches
+nested,3,0x00800544,uint32 header,0xA,,0x00800540,value 10; 0x53 consumes an additional 32-bit field
+nested,4,0x00800540,opcode,0x10,B40B1435(),0x0080053F,"nested interpreter first opcode, push integer"
+nested,5,0x0080053F,uint32 operand,0x0,,0x0080053B,push integer 0
+nested,6,0x0080053B,opcode,0x50,'8C26AAA4'(),0x0080053A,pop integer 0
+nested,7,0x0080053A,opcode,0x40,E82B3785(),0x00800539,E82B3785 operates on encoded data and runtime object; detailed semantics unresolved
+nested,8,0x00800539,uint8 operand,0x0,,0x00800538,first 0x40 control byte; role unresolved
+nested,9,0x00800538,uint32 operand,0x3EA520,,0x00800534,first decoded 32-bit operand for 0x40
+nested,10,0x00800534,uint32 operand,0x3EA532,,0x00800530,second decoded 32-bit operand for 0x40
+nested,11,0x00800530,uint32 operand,0x7FEF12,,0x0080052C,third decoded 32-bit operand for 0x40
+nested,12,0x0080052C,uint32 operand,0x1000054,,0x00800528,fourth decoded 32-bit operand for 0x40
+nested,13,0x00800528,opcode,0xCF,E82B3785(),0x00800527,0xCF also maps to E82B3785; another record follows
+nested,14,0x00800527,uint8 operand,0x0,,0x00800526,control byte for 0xCF record
+nested,15,0x00800526,uint32 operand,0x3EAF6C,,0x00800522,first 0xCF operand
+nested,16,0x00800522,uint32 operand,0x3EAF8A,,0x0080051E,second 0xCF operand
+nested,17,0x0080051E,uint32 operand,0x7FC0FE,,0x0080051A,third 0xCF operand
+nested,18,0x0080051A,uint32 operand,0x1000054,,0x00800516,fourth 0xCF operand
+nested,19,0x00800516,opcode,0x10,B40B1435(),0x00800515,0x10 read/push 32-bit integer
+nested,20,0x00800515,uint32 operand,0x7C,,0x00800511,push 0x7C
+nested,21,0x00800511,opcode,0x39,'7026BDB3'(),0x00800510,0x39 resolves an encoded FieldInfo
+nested,22,0x00800510,uint32 operand,0x4000195,,0x0080050C,field token 0x04000195 (VM evaluation stack field)
+nested,23,0x0080050C,opcode,0x1A,D719AC25(),0x0080050B,0x1A pops two VM values and performs value conversion/assignment

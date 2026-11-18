@@ -1,0 +1,61 @@
+// Token: 0x060002D2 RID: 722 RVA: 0x00E52C2C File Offset: 0x0065B22C
+.method private hidebysig 
+	instance void B59103A5 () cil managed 
+{
+	// Header Size: 12 bytes
+	// Code Size: 108 (0x6C) bytes
+	// LocalVarSig Token: 0x110000D7 RID: 215
+	.maxstack 23
+	.locals init (
+		[0] class '6633B699'/'8F0BF53C',
+		[1] class '6633B699'/'8F0BF53C',
+		[2] uint32
+	)
+
+	// loop start
+		/* 0x0065B238 02           */ IL_0000: ldarg.0
+		/* 0x0065B239 7B95010004   */ IL_0001: ldfld     class '6633B699'/FB9C7B25 '6633B699'::F10BF79A
+		/* 0x0065B23E 20013E893D   */ IL_0006: ldc.i4    1032404481
+		/* 0x0065B243 0C           */ IL_000B: stloc.2
+		/* 0x0065B244 6F71000006   */ IL_000C: callvirt  instance class '6633B699'/'8F0BF53C' '6633B699'/FB9C7B25::'93329331'()
+		/* 0x0065B249 08           */ IL_0011: ldloc.2
+		/* 0x0065B24A 2020399586   */ IL_0012: ldc.i4    -2037040864
+		/* 0x0065B24F 5C           */ IL_0017: div.un
+		/* 0x0065B250 0C           */ IL_0018: stloc.2
+		/* 0x0065B251 0B           */ IL_0019: stloc.1
+		/* 0x0065B252 02           */ IL_001A: ldarg.0
+		/* 0x0065B253 7B95010004   */ IL_001B: ldfld     class '6633B699'/FB9C7B25 '6633B699'::F10BF79A
+		/* 0x0065B258 08           */ IL_0020: ldloc.2
+		/* 0x0065B259 2014F02F77   */ IL_0021: ldc.i4    1999630356
+		/* 0x0065B25E 58           */ IL_0026: add
+		/* 0x0065B25F 0C           */ IL_0027: stloc.2
+		/* 0x0065B260 6F71000006   */ IL_0028: callvirt  instance class '6633B699'/'8F0BF53C' '6633B699'/FB9C7B25::'93329331'()
+		/* 0x0065B265 20AF560FE8   */ IL_002D: ldc.i4    -401647953
+		/* 0x0065B26A 08           */ IL_0032: ldloc.2
+		/* 0x0065B26B 5A           */ IL_0033: mul
+		/* 0x0065B26C 0C           */ IL_0034: stloc.2
+		/* 0x0065B26D 0A           */ IL_0035: stloc.0
+		/* 0x0065B26E 2026792110   */ IL_0036: ldc.i4    270629158
+		/* 0x0065B273 08           */ IL_003B: ldloc.2
+		/* 0x0065B274 5C           */ IL_003C: div.un
+		/* 0x0065B275 0C           */ IL_003D: stloc.2
+		/* 0x0065B276 02           */ IL_003E: ldarg.0
+		/* 0x0065B277 7B95010004   */ IL_003F: ldfld     class '6633B699'/FB9C7B25 '6633B699'::F10BF79A
+		/* 0x0065B27C 06           */ IL_0044: ldloc.0
+		/* 0x0065B27D 07           */ IL_0045: ldloc.1
+		/* 0x0065B27E 08           */ IL_0046: ldloc.2
+		/* 0x0065B27F 203BCE3C58   */ IL_0047: ldc.i4    1480379963
+		/* 0x0065B284 5F           */ IL_004C: and
+		/* 0x0065B285 0C           */ IL_004D: stloc.2
+		/* 0x0065B286 28F8000006   */ IL_004E: call      class '6633B699'/'8F0BF53C' '6633B699'/'43233FA0'::A229B4BC(class '6633B699'/'8F0BF53C', class '6633B699'/'8F0BF53C')
+		/* 0x0065B28B 08           */ IL_0053: ldloc.2
+		/* 0x0065B28C 2015000000   */ IL_0054: ldc.i4    21
+		/* 0x0065B291 62           */ IL_0059: shl
+		/* 0x0065B292 0C           */ IL_005A: stloc.2
+		/* 0x0065B293 6F74000006   */ IL_005B: callvirt  instance void '6633B699'/FB9C7B25::E61629A6(class '6633B699'/'8F0BF53C')
+		/* 0x0065B298 08           */ IL_0060: ldloc.2
+		/* 0x0065B299 2026FA2D91   */ IL_0061: ldc.i4    -1859257818
+		/* 0x0065B29E 4295FFFFFF   */ IL_0066: bgt.un    IL_0000
+	// end loop
+	/* 0x0065B2A3 2A           */ IL_006B: ret
+} // end of method '6633B699'::B59103A5

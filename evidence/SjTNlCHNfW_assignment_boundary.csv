@@ -1,0 +1,4 @@
+cursor_rva,decoded_value,handler_or_use,meaning,confidence
+0x007FE1EF,0x1A,D719AC25,typed assignment; destination and source are popped,verified-handler / state-effect-unresolved
+0x007FE1EE,0x9C,74B39F1C,next opcode only under unchanged reader assumption,conditional
+0x007FE1ED,0xF735885A,EF8B98AF method-id operand,not a normal CLR method token; likely desynchronization,conditional-invalid

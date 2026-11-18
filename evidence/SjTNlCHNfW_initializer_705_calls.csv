@@ -1,0 +1,17 @@
+il_offset,opcode,target_token,target_kind,target_name,file_backing
+0x28,callvirt,0x0600006D,internal MethodDef,EAA46804::CD90E311,no RVA
+0x4E,newobj,0x060001FD,internal MethodDef,F6AFCDA3::.ctor,file-backed
+0x61,callvirt,0x06000074,internal MethodDef,FB9C7B25::E61629A6,file-backed
+0x81,callvirt,0x060000D3,internal MethodDef,A3B21017::27803C38,file-backed
+0x86,callvirt,0x0A000152,MemberRef,::,
+0x8B,callvirt,0x06000081,internal MethodDef,95969DA2::Invoke,no RVA
+0xA2,callvirt,0x0600006F,internal MethodDef,EAA46804::841E011C,no RVA
+0x13B,call,0x060002BA,internal MethodDef,6633B699::CE8DFD9B,file-backed
+0x15D,callvirt,0x06000071,internal MethodDef,FB9C7B25::93329331,file-backed
+0x162,callvirt,0x06000148,internal MethodDef,8F0BF53C::798B5EB6,no RVA
+0x185,callvirt,0x0A000153,MemberRef,::,
+0x1B1,call,0x0A000154,MemberRef,::,
+0x1BE,call,0x0A000155,MemberRef,::,
+0x1CD,call,0x0A000156,MemberRef,::,
+0x206,callvirt,0x0A000060,MemberRef,::,
+0x22B,callvirt,0x0A000157,MemberRef,::,

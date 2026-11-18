@@ -1,0 +1,54 @@
+// Token: 0x0600028E RID: 654 RVA: 0x00E4F170 File Offset: 0x00657770
+.method private hidebysig 
+	instance void '1C922035' () cil managed 
+{
+	// Header Size: 12 bytes
+	// Code Size: 93 (0x5D) bytes
+	// LocalVarSig Token: 0x110000C3 RID: 195
+	.maxstack 23
+	.locals init (
+		[0] class '6633B699'/'8F0BF53C',
+		[1] class '6633B699'/'8F0BF53C',
+		[2] uint32
+	)
+
+	/* 0x0065777C 20B471B161   */ IL_0000: ldc.i4    1639018932
+	/* 0x00657781 0C           */ IL_0005: stloc.2
+	// loop start (head: IL_0006)
+		/* 0x00657782 02           */ IL_0006: ldarg.0
+		/* 0x00657783 20B5359ED9   */ IL_0007: ldc.i4    -643942987
+		/* 0x00657788 08           */ IL_000C: ldloc.2
+		/* 0x00657789 5E           */ IL_000D: rem.un
+		/* 0x0065778A 0C           */ IL_000E: stloc.2
+		/* 0x0065778B 7B95010004   */ IL_000F: ldfld     class '6633B699'/FB9C7B25 '6633B699'::F10BF79A
+		/* 0x00657790 08           */ IL_0014: ldloc.2
+		/* 0x00657791 201BB71A21   */ IL_0015: ldc.i4    555398939
+		/* 0x00657796 59           */ IL_001A: sub
+		/* 0x00657797 0C           */ IL_001B: stloc.2
+		/* 0x00657798 6F71000006   */ IL_001C: callvirt  instance class '6633B699'/'8F0BF53C' '6633B699'/FB9C7B25::'93329331'()
+		/* 0x0065779D 0B           */ IL_0021: stloc.1
+		/* 0x0065779E 02           */ IL_0022: ldarg.0
+		/* 0x0065779F 7B95010004   */ IL_0023: ldfld     class '6633B699'/FB9C7B25 '6633B699'::F10BF79A
+		/* 0x006577A4 6F71000006   */ IL_0028: callvirt  instance class '6633B699'/'8F0BF53C' '6633B699'/FB9C7B25::'93329331'()
+		/* 0x006577A9 0A           */ IL_002D: stloc.0
+		/* 0x006577AA 2024B90926   */ IL_002E: ldc.i4    638171428
+		/* 0x006577AF 08           */ IL_0033: ldloc.2
+		/* 0x006577B0 59           */ IL_0034: sub
+		/* 0x006577B1 0C           */ IL_0035: stloc.2
+		/* 0x006577B2 02           */ IL_0036: ldarg.0
+		/* 0x006577B3 7B95010004   */ IL_0037: ldfld     class '6633B699'/FB9C7B25 '6633B699'::F10BF79A
+		/* 0x006577B8 201645B7EC   */ IL_003C: ldc.i4    -323533546
+		/* 0x006577BD 08           */ IL_0041: ldloc.2
+		/* 0x006577BE 61           */ IL_0042: xor
+		/* 0x006577BF 0C           */ IL_0043: stloc.2
+		/* 0x006577C0 06           */ IL_0044: ldloc.0
+		/* 0x006577C1 07           */ IL_0045: ldloc.1
+		/* 0x006577C2 2864000006   */ IL_0046: call      class '6633B699'/'8F0BF53C' '6633B699'/E29CB52C::'68360417'(class '6633B699'/'8F0BF53C', class '6633B699'/'8F0BF53C')
+		/* 0x006577C7 6F74000006   */ IL_004B: callvirt  instance void '6633B699'/FB9C7B25::E61629A6(class '6633B699'/'8F0BF53C')
+		/* 0x006577CC 20AF3B8002   */ IL_0050: ldc.i4    41958319
+		/* 0x006577D1 08           */ IL_0055: ldloc.2
+		/* 0x006577D2 5C           */ IL_0056: div.un
+		/* 0x006577D3 3AAAFFFFFF   */ IL_0057: brtrue    IL_0006
+	// end loop
+	/* 0x006577D8 2A           */ IL_005C: ret
+} // end of method '6633B699'::'1C922035'

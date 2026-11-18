@@ -1,0 +1,44 @@
+stream,rva_before,read_kind,value,description,handler
+76B7C6BB .cctor,0x007FC7AF,opcode,0x00000010,push uint32,B40B1435()
+76B7C6BB .cctor,0x007FC7AE,u32,0x00000000,integer 0,
+76B7C6BB .cctor,0x007FC7AA,opcode,0x00000050,stack discard,'8C26AAA4'()
+76B7C6BB .cctor,0x007FC7A9,opcode,0x00000050,stack discard,'8C26AAA4'()
+76B7C6BB .cctor,0x007FC7A8,opcode,0x00000010,push uint32,B40B1435()
+76B7C6BB .cctor,0x007FC7A7,u32,0x00000034,array length 52,
+76B7C6BB .cctor,0x007FC7A3,opcode,0x0000001B,allocate typed array,'79AF42A2'()
+76B7C6BB .cctor,0x007FC7A2,u32,0x01000058,System.UInt32,
+76B7C6BB .cctor,0x007FC79E,opcode,0x00000001,resolve VM value,B1190689()
+76B7C6BB .cctor,0x007FC79D,u32,0x00000000,value 0,
+76B7C6BB .cctor,0x007FC799,opcode,0x00000012,field reference,'35A1509D'()
+76B7C6BB .cctor,0x007FC798,u32,0x04000182,76B7C6BB.D0244F83 (static UInt32[]),
+76B7C6BB .cctor,0x007FC794,opcode,0x0000001A,typed assignment,D719AC25()
+76B7C6BB .cctor,0x007FC793,opcode,0x000000C3,resolve VM value,B1190689()
+76B7C6BB .cctor,0x007FC792,u32,0x00000000,value 0,
+76B7C6BB .cctor,0x007FC78E,opcode,0x00000010,push uint32,B40B1435()
+76B7C6BB .cctor,0x007FC78D,u32,0x00000000,integer 0,
+76B7C6BB .cctor,0x007FC789,opcode,0x00000039,wrapped cursor field reference,'7026BDB3'()
+76B7C6BB .cctor,0x007FC788,u32,0x04000191,6633B699.B32A609B (A3B21017 reader),
+76B7C6BB .cctor,0x007FC784,opcode,0x0000001A,typed assignment / possible cursor redirection,D719AC25()
+second nested,0x007FE224,u16,0x00000000,header count,
+second nested,0x007FE222,u32,0x01000058,System.UInt32,
+second nested,0x007FE21E,u32,0x01000066,System.Enum,
+second nested,0x007FE21A,opcode,0x00000010,push,B40B1435()
+second nested,0x007FE219,u32,0x00000000,zero,
+second nested,0x007FE215,opcode,0x00000050,discard,'8C26AAA4'()
+second nested,0x007FE214,opcode,0x00000050,discard,'8C26AAA4'()
+second nested,0x007FE213,opcode,0x000000C3,resolve VM value,B1190689()
+second nested,0x007FE212,u32,0x00000000,zero,
+second nested,0x007FE20E,opcode,0x00000012,field ref,'35A1509D'()
+second nested,0x007FE20D,u32,0x04000182,static uint[],
+second nested,0x007FE209,opcode,0x0000000D,convert,DF3D6327()
+second nested,0x007FE208,opcode,0x00000010,push,B40B1435()
+second nested,0x007FE207,u32,0x00000005,array index,
+second nested,0x007FE203,opcode,0x00000095,array get,C5931FB9()
+second nested,0x007FE202,u32,0x01000058,UInt32,
+second nested,0x007FE1FE,opcode,0x00000024,convert,C9BF0D8B()
+second nested,0x007FE1FD,u32,0x01000058,UInt32,
+second nested,0x007FE1F9,opcode,0x00000010,push,B40B1435()
+second nested,0x007FE1F8,u32,0x00000000,zero,
+second nested,0x007FE1F4,opcode,0x00000039,cursor field wrapper,'7026BDB3'()
+second nested,0x007FE1F3,u32,0x04000191,reader,
+second nested,0x007FE1EF,opcode,0x0000001A,typed assignment / possible cursor redirection,D719AC25()

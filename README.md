@@ -1,3 +1,8 @@
+<!-- Scope and browseable evidence tree published from the checked-in archive. -->
+**Repository navigation:** [Corrected loader/protector report](report/SjTNlCHNfW_Loader_Protector_report.md) · [888-row method CSV](evidence/SjTNlCHNfW_function_inventory.csv) · [Full IL disassembly](evidence/SjTNlCHNfW_disassembly.il.txt) · [CFG JSON](evidence/SjTNlCHNfW_control_flow_graphs.json) · [Audit](AUDIT.json) · [Integrity manifest](MANIFEST_SHA256.txt).
+
+**Important:** This analyzes the loader/protector, not verified aimbot/ESP behavior. The 163 unbacked method RVAs do not prove generated bodies, and the protector is not attributed to a vendor.
+
 # SjTNlCHNfW.exe — Loader + Protector Analysis
 **SHA-256:** `119883c62a2e832f0e9058e0d88e391f15820674cdd33d79845c73c58d63ea40`  
 **MVID:** `25c98968-dcee-4c45-889d-f1773ecb3789`  
