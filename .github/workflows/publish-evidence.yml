@@ -22,6 +22,8 @@ jobs:
           persist-credentials: true
       - name: Verify and unpack static evidence (no EXE execution)
         run: python3 scripts/publish_evidence_tree.py
+      - name: Check repository and ZIP SHA-256 coverage
+        run: python3 scripts/verify_integrity.py
       - name: Commit readable evidence tree
         run: |
           git config user.name "github-actions[bot]"
