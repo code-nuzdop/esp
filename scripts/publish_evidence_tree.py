@@ -17,12 +17,26 @@ with zipfile.ZipFile(source) as z:
               "evidence/SjTNlCHNfW_function_inventory.csv"}
     if not required.issubset(entries): raise SystemExit("Incomplete archive")
     manifest=z.read("MANIFEST_SHA256.txt").decode("utf-8").splitlines()
-    for line in manifest:
+    entries_seen={}
+    for line_number, line in enumerate(manifest,1):
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+        if "  " not in line:
+            raise SystemExit(f"Malformed manifest line {line_number}: no two-space delimiter")
         digest, name=line.split("  ",1)
         if len(digest)!=64 or any(c not in "0123456789abcdefABCDEF" for c in digest):
-            continue  # Ignore explanatory manifest headers.
-        if name not in entries or hashlib.sha256(z.read(name)).hexdigest()!=digest:
-            raise SystemExit(f"Manifest mismatch: {name}")
+            raise SystemExit(f"Malformed manifest hash on line {line_number}")
+        if not name or name in entries_seen:
+            raise SystemExit(f"Duplicate/empty manifest path on line {line_number}")
+        entries_seen[name]=digest.lower()
+    expected=entries-{"MANIFEST_SHA256.txt","README_START_HERE.md"}
+    if len(entries_seen)<60 or set(entries_seen)!=expected:
+        missing=sorted(expected-set(entries_seen))
+        extra=sorted(set(entries_seen)-expected)
+        raise SystemExit(f"Archive manifest incomplete: {len(entries_seen)} hashes; missing={missing}, extra={extra}")
+    for name,digest in entries_seen.items():
+        if hashlib.sha256(z.read(name)).hexdigest()!=digest:
+            raise SystemExit(f"Archive member SHA-256 mismatch: {name}")
     for name in sorted(entries):
         parts=Path(name)
         if parts.is_absolute() or ".." in parts.parts:
@@ -48,6 +62,23 @@ def normalize(path):
 normalized=[]
 for p in list(root.glob("*.txt"))+list((root/"evidence").rglob("*.txt")):
     if p.is_file() and normalize(p): normalized.append(str(p.relative_to(root)))
+
+# Root UTF-16 exports were duplicates/legacy views. Their original bytes remain in Git
+# history; remove the loose copies so only the canonical evidence/ tree is browsed.
+legacy_root = {
+ "helper_32bit.cs.txt","helper_64bit.cs.txt","imports.txt",
+ "opcode_00.il.txt","opcode_00_actual.cs.txt",
+ "opcode_01.il.txt","opcode_01_helper.cs.txt",
+ "opcode_02.il.txt","opcode_02_helper.cs.txt",
+ "opcode_registration.il.txt","pe_headers.txt","vm_class.il.txt",
+ "vm_constructor_full.il.txt"
+}
+removed_root=[]
+for name in sorted(legacy_root):
+    path=root/name
+    if path.exists():
+        path.unlink()
+        removed_root.append(name)
 
 old=root/"report/SjTNlCHNfW_MASTER_comprehensive_report.md"
 new=root/"report/SjTNlCHNfW_Loader_Protector_report.md"
@@ -101,18 +132,23 @@ audit={
  "cfg_json":"evidence/SjTNlCHNfW_control_flow_graphs.json",
  "cfg_top_level_entries":len(cfg) if isinstance(cfg,(list,dict)) else None,
  "original_archive_sha256":hashlib.sha256(source.read_bytes()).hexdigest(),
- "archive_manifest_entries":len(manifest),
+ "archive_manifest_entries":len(entries_seen),
  "archive_integrity_verified":True,
+ "archive_internal_manifest_complete":True,
+ "archive_internal_manifest_uncovered":["MANIFEST_SHA256.txt","README_START_HERE.md"],
+ "root_duplicate_exports_removed":removed_root,
+ "module_mvid":"25c98968-dcee-4c45-889d-f1773ecb3789",
  "normalized_files":normalized
 }
 (root/"AUDIT.json").write_text(json.dumps(audit,indent=2)+"\n",encoding="utf-8")
 files=[]
 for folder in ["evidence","report","scripts","historical"]:
     files += [p for p in (root/folder).rglob("*") if p.is_file()]
-files += [root/"README_START_HERE.md",root/"AUDIT.json"]
+files += [root/"README.md",root/"README_START_HERE.md",root/"AUDIT.json",sample,source]
+files += list(root.glob("*.txt"))
 lines=[]
 for p in sorted(set(files)):
     rel=p.relative_to(root).as_posix()
     lines.append(hashlib.sha256(p.read_bytes()).hexdigest()+"  "+rel)
 (root/"MANIFEST_SHA256.txt").write_text("\n".join(lines)+"\n",encoding="utf-8")
-print(f"Validated archive; published {len(files)} evidence files; {len(rows)} methods; normalized {len(normalized)} UTF-16 files")
+print(f"Validated {len(entries_seen)} archive hashes, published {len(files)} file hashes, removed {len(removed_root)} legacy root files; {len(rows)} methods")
