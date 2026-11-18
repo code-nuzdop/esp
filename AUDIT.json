@@ -13,21 +13,7 @@
   "archive_internal_manifest_uncovered": [
     "MANIFEST_SHA256.txt"
   ],
-  "root_duplicate_exports_removed": [
-    "helper_32bit.cs.txt",
-    "helper_64bit.cs.txt",
-    "imports.txt",
-    "opcode_00.il.txt",
-    "opcode_00_actual.cs.txt",
-    "opcode_01.il.txt",
-    "opcode_01_helper.cs.txt",
-    "opcode_02.il.txt",
-    "opcode_02_helper.cs.txt",
-    "opcode_registration.il.txt",
-    "pe_headers.txt",
-    "vm_class.il.txt",
-    "vm_constructor_full.il.txt"
-  ],
+  "root_duplicate_exports_removed": [],
   "module_mvid": "25c98968-dcee-4c45-889d-f1773ecb3789",
   "normalized_files": []
 }
