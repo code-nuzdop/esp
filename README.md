@@ -11,7 +11,7 @@
 
 > **Scope:** This repository documents static loader/protector behavior, obfuscated .NET VM implementation, and recovered metadata. It **does not** establish aimbot/ESP or other cheat functionality. The protected program has not been fully devirtualized or classified as benign/malicious. Do not execute the sample outside an isolated investigation environment.
 ## What this repository contains
-- **`report/SjTNlCHNfW_MASTER_comprehensive_report.md`** — authoritative technical narrative (no PDF required).
+- **`report/SjTNlCHNfW_Loader_Protector_report.md`** — authoritative technical narrative (no PDF required).
 - **`evidence/SjTNlCHNfW_recovery_status.csv`** — all 888 MethodDef rows with token, RVA, backing, IL status, instruction/block/edge counts, incoming calls, and analyst notes.
 - **`evidence/SjTNlCHNfW_function_inventory.csv`** and **`evidence/SjTNlCHNfW_pass6_method_provenance.csv`** — independent 888-row inventories.
 - **`evidence/SjTNlCHNfW_disassembly.il.txt`** — actual structural IL disassembly for all 650 file-backed methods (not devirtualized payload source).
@@ -20,7 +20,15 @@
 - **`evidence/vm_opcode_map.csv`** — 256 opcode keys to 93 distinct handler methods.
 - **`evidence/SjTNlCHNfW_typed_124_local_slots.csv`** — the 124 reconstructed local registrations.
 - **`scripts/`** — offline decoding and audit scripts; **`historical/`** preserves earlier analyses, including superseded hypotheses.
-- **`MANIFEST_SHA256.txt`** and **`AUDIT.json`** — integrity and archive-content validation.
+- **`MANIFEST_SHA256.txt`** and **`AUDIT.json`** — integrity and archive-content validation. The root manifest includes `SjTNlCHNfW.exe`, `README.md`, the original evidence ZIP, and the browseable evidence tree; the manifest itself is excluded to avoid a self-referential hash.
+
+## Commit signing and provenance
+
+GitHub reports some automated commits as **unsigned**. The repository manifest and Git history document file integrity and changes, but do **not** substitute for a GitHub Verified commit signature. Earlier unsigned commits are preserved unchanged; making those commits signed would require rewriting history, which has not been done. Future signing requires configuring a GitHub-recognized signing identity or using GitHub's signed web-UI commit flow.
+
+## Integrity verification
+
+The repository-level SHA-256 manifest covers the checked-in sample, the README, the ZIP snapshot, and the browseable evidence tree (including audit scripts). It excludes itself because a SHA-256 file cannot contain its own final checksum. Run `python scripts/verify_integrity.py` to check both the expanded tree and original ZIP contents. The archive's original internal manifest has 65 member hashes plus its explanatory header; its only uncovered member is that archive manifest itself.
 
 ## What the 888-row inventory actually proves
 | Metadata classification | Count | Interpretation |
@@ -30,14 +38,14 @@
 | Zero RVA | 75 | Includes abstract, runtime, and interop declarations; not 75 missing encrypted bodies |
 | **Total MethodDef rows** | **888** | Direct CLR metadata row count |
 
-The method token is a `0x06xxxxxx` MethodDef identifier. MVID identifies the managed module build and is **not** a sample-file cryptographic hash; verify the SHA-256 separately. The two supplied copies of the EXE have the same SHA-256. The sample binary and earlier process dump are deliberately excluded from the ZIP.
+The method token is a `0x06xxxxxx` MethodDef identifier. MVID identifies the managed module build and is **not** a sample-file cryptographic hash; verify the SHA-256 separately. Only one EXE is tracked in this repository. Previously compared local copies had matching SHA-256; the checked-in sample can be independently verified with the root integrity manifest. The sample binary and earlier process dump are deliberately excluded from the ZIP.
 
 ## Independent archive verification
 - Exactly **650 distinct MethodDef headers** in the full IL disassembly; exact token-set match against the file-backed decoded subset of the 888-row inventory.
 - Exactly **650 CFG entries**, with **2,725 blocks** and **3,348 edges**; exact matching MethodDef token set.
 - **2,561** parsed call references, **256** opcode registrations, **93** distinct callbacks and **124** recovered VM local slots.
 - All **41** explicit / expanded Appendix E filename claims are present. ZIP integrity checked with CRC.
-- **8** historical UTF-16 text exports normalized to UTF-8 (without BOM) inside `evidence/`; nested historical ZIPs are retained byte-for-byte for provenance.
+- **8** historical UTF-16 evidence exports were normalized inside `evidence/`, and **12** root-level UTF-16 files were normalized during the previous publication pass. The 13 loose root exports have since been removed to prevent drift; all original bytes remain in Git history. Nested historical ZIPs remain unchanged.
 
 ## Reading the method CSV without the PDF
 `evidence/SjTNlCHNfW_recovery_status.csv` has the columns: `method_token`, `method_id`, `type`, `name`, `rva`, `file_backing`, `header`, `il_decode`, `instructions`, `basic_blocks`, `cfg_edges`, `internal_incoming_calls`, `notes`. Every MethodDef row is also indexed below for convenient source browsing; numerical measurements and notes remain in the CSV.

@@ -145,7 +145,8 @@ files=[]
 for folder in ["evidence","report","scripts","historical"]:
     files += [p for p in (root/folder).rglob("*") if p.is_file()]
 files += [root/"README.md",root/"README_START_HERE.md",root/"AUDIT.json",sample,source]
-files += list(root.glob("*.txt"))
+files += [p for p in root.glob("*.txt") if p.name != "MANIFEST_SHA256.txt"]
+files += [p for p in (root/".github").rglob("*") if p.is_file()]
 lines=[]
 for p in sorted(set(files)):
     rel=p.relative_to(root).as_posix()
