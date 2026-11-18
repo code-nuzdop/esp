@@ -19,7 +19,7 @@ with zipfile.ZipFile(source) as z:
     manifest=z.read("MANIFEST_SHA256.txt").decode("utf-8").splitlines()
     entries_seen={}
     for line_number, line in enumerate(manifest,1):
-        if not line.strip() or line.lstrip().startswith("#"):
+        if not line.strip() or line.lstrip().startswith("#") or line.startswith("SHA-256  FILE "):
             continue
         if "  " not in line:
             raise SystemExit(f"Malformed manifest line {line_number}: no two-space delimiter")
@@ -29,7 +29,7 @@ with zipfile.ZipFile(source) as z:
         if not name or name in entries_seen:
             raise SystemExit(f"Duplicate/empty manifest path on line {line_number}")
         entries_seen[name]=digest.lower()
-    expected=entries-{"MANIFEST_SHA256.txt","README_START_HERE.md"}
+    expected=entries-{"MANIFEST_SHA256.txt"}
     if len(entries_seen)<60 or set(entries_seen)!=expected:
         missing=sorted(expected-set(entries_seen))
         extra=sorted(set(entries_seen)-expected)
@@ -135,7 +135,7 @@ audit={
  "archive_manifest_entries":len(entries_seen),
  "archive_integrity_verified":True,
  "archive_internal_manifest_complete":True,
- "archive_internal_manifest_uncovered":["MANIFEST_SHA256.txt","README_START_HERE.md"],
+ "archive_internal_manifest_uncovered":["MANIFEST_SHA256.txt"],
  "root_duplicate_exports_removed":removed_root,
  "module_mvid":"25c98968-dcee-4c45-889d-f1773ecb3789",
  "normalized_files":normalized
