@@ -19,6 +19,8 @@ with zipfile.ZipFile(source) as z:
     manifest=z.read("MANIFEST_SHA256.txt").decode("utf-8").splitlines()
     for line in manifest:
         digest, name=line.split("  ",1)
+        if len(digest)!=64 or any(c not in "0123456789abcdefABCDEF" for c in digest):
+            continue  # Ignore explanatory manifest headers.
         if name not in entries or hashlib.sha256(z.read(name)).hexdigest()!=digest:
             raise SystemExit(f"Manifest mismatch: {name}")
     for name in sorted(entries):
@@ -57,9 +59,9 @@ if old.exists():
 
 ## Runtime-materialization hypothesis (not demonstrated)
 
-The sections \`F!_~Pyan\` and \`0[n6P0.A\` have Code|Execute|Read flags (\`0x60000020\`) and no file-backed bytes. A write to these pages would require suitable memory protection at the time of writing, **if** protected code is actually materialized there. No \`VirtualProtect\` event or generated method body has been observed. The zero-filled entry-point RVA \`0x2050\` does not by itself prove a valid empty \`Main\` stub. The file-backed \`<Module>::.cctor\` at RVA \`0xA988D8\` is an independently verified early initializer. Reflection.Emit and unmanaged allocation references indicate **capability**, not proof of how the 163 declarations are handled.
+The sections `F!_~Pyan` and `0[n6P0.A` have Code|Execute|Read flags (`0x60000020`) and no file-backed bytes. A write to these pages would require suitable memory protection at the time of writing, **if** protected code is actually materialized there. No `VirtualProtect` event or generated method body has been observed. The zero-filled entry-point RVA `0x2050` does not by itself prove a valid empty `Main` stub. The file-backed `<Module>::.cctor` at RVA `0xA988D8` is an independently verified early initializer. Reflection.Emit and unmanaged allocation references indicate **capability**, not proof of how the 163 declarations are handled.
 
-The custom protector's product/vendor is **unidentified**. The 52-element \`D0244F83\` array, element 5, reader-cursor control, and the missing method bodies remain unresolved. No verified aimbot/ESP behavior can be asserted.
+The custom protector's product/vendor is **unidentified**. The 52-element `D0244F83` array, element 5, reader-cursor control, and the missing method bodies remain unresolved. No verified aimbot/ESP behavior can be asserted.
 
 ---
 
